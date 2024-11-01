@@ -1,0 +1,7 @@
+tweepy==4.14.0
+airtable-python-wrapper==0.15.3
+python-dotenv==1.0.1
+langchain==0.1.9
+langchain-openai==0.0.7
+schedule==1.2.1
+openai==1.13.3
