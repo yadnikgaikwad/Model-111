@@ -36,7 +36,7 @@ class TwitterBot:
 
         self.airtable = Airtable(AIRTABLE_BASE_KEY, AIRTABLE_TABLE_NAME, AIRTABLE_API_KEY)
         self.twitter_me_id = self.get_me_id()
-        self.tweet_response_limit = 35 # How many tweets to respond to each time the program wakes up
+        self.tweet_response_limit = 15 # How many tweets to respond to each time the program wakes up
 
         # Initialize the language model w/ temperature of .5 to induce some creativity
         self.llm = ChatOpenAI(temperature=.5, openai_api_key=OPENAI_API_KEY, model_name='gpt-4')
@@ -182,7 +182,7 @@ def job():
 
 if __name__ == "__main__":
     # Schedule the job to run every 5 minutes. Edit to your liking, but watch out for rate limits
-    schedule.every(6).minutes.do(job)
+    schedule.every(15).minutes.do(job)
     while True:
         schedule.run_pending()
         time.sleep(1)
